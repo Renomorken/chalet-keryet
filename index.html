@@ -1,0 +1,175 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chalet l’Essina – Vars | Vue panoramique, 3 ch, poêle & terrasse</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/favicon-512.png">
+<link rel="canonical" href="https://chalet-keryet.vercel.app">
+<meta property="og:title" content="Chalet l’Essina – Vars | Vue panoramique, 3 ch, poêle & terrasse">
+<meta property="og:description" content="Chalet chaleureux à Vars : 3 chambres, 2 salles de bain, grande terrasse plein sud, poêle à bois, Wi‑Fi. Réservation directe avec calendrier synchronisé et paiement sécurisé.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chalet-keryet.vercel.app">
+<meta property="og:image" content="https://chalet-keryet.vercel.app/images/social-preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chalet l’Essina – Vars">
+<meta name="twitter:description" content="Votre refuge face aux sommets — réservez en direct.">
+<meta name="twitter:image" content="https://chalet-keryet.vercel.app/images/social-preview.jpg">
+
+<meta name="description" content="Chalet chaleureux à Vars : 3 chambres, 2 salles de bain, terrasse plein sud, poêle à bois, Wi‑Fi. Réservation directe avec calendrier synchronisé et paiement sécurisé.">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <img src="images/logo.svg" alt="Logo" width="36" height="36">
+        <h1>Chalet l'Essina</h1>
+      </div>
+      <div>
+        <a href="#galerie">Galerie</a>
+        <a href="#equipements">Équipements</a>
+        <a href="#calendrier">Calendrier</a>
+        <a href="#contact">Contact</a>
+        <a href="#reserver" class="btn">Réserver</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <h2>Votre refuge face aux sommets</h2>
+      <p>Un cocon chaleureux à Vars (1 650 m) pour familles & amis : 3 chambres, 2 salles de bain, grande terrasse plein sud, poêle à bois, Wi‑Fi et local à skis. À 10 min des pistes.</p>
+      <div style="display:flex;gap:10px;margin-top:8px">
+        <a class="btn" href="#reserver">Voir disponibilités</a>
+        <a class="btn secondary" href="https://airbnb.com/h/keryet" target="_blank" rel="noopener">Voir sur Airbnb</a>
+      </div>
+      <div style="margin-top:10px;color:#555;font-size:14px">Prix indicatif <strong id="priceIndic"></strong> / nuit — frais de ménage en sus.</div>
+    </div>
+    <div class="card gallery">
+      <img src="images/hero-1.jpg" alt="Séjour du chalet">
+      <div class="grid cols-3">
+        <img src="images/hero-2.jpg" alt="Chambre">
+        <img src="images/hero-3.jpg" alt="Cuisine équipée">
+        <img src="images/hero-4.jpg" alt="Vue du balcon">
+      </div>
+    </div>
+  </section>
+
+  <section id="equipements">
+    <h3 class="section-title">Équipements</h3>
+    <div>
+      <span class="tag">6 voyageurs</span>
+      <span class="tag">3 chambres</span>
+      <span class="tag">2 salles de bain</span>
+      <span class="tag">Grande terrasse</span>
+      <span class="tag">Vue montagne</span>
+      <span class="tag">Poêle à bois</span>
+      <span class="tag">Local à skis</span>
+      <span class="tag">Wi‑Fi</span>
+      <span class="tag">Parking</span>
+      <span class="tag">Lave‑linge</span>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <h3 class="section-title">Galerie</h3>
+    <div class="grid cols-3" id="galleryGrid">
+      <!-- Dynamically filled by script -->
+    </div>
+  </section>
+
+  <section id="calendrier">
+    <h3 class="section-title">Disponibilités</h3>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:24px">
+      <div class="calendar card">
+        <div class="month">
+          <button id="prev">&larr;</button>
+          <div id="monthLabel"></div>
+          <button id="next">&rarr;</button>
+        </div>
+        <div class="grid" id="calGrid"></div>
+        <div class="legend">
+          <span><span class="box"></span>Libre</span>
+          <span><span class="box b"></span>Indisponible</span>
+          <span><span class="box s"></span>Sélection</span>
+        </div>
+      </div>
+      <div class="card pad">
+        <h4 style="margin-top:0">Votre séjour</h4>
+        <form id="bookingForm">
+          <div><label for="start">Arrivée</label><input id="start" name="start" type="date" required></div>
+          <div><label for="end">Départ</label><input id="end" name="end" type="date" required></div>
+          <div><label for="guests">Voyageurs</label><select id="guests" name="guests"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+          <div><label for="name">Nom</label><input id="name" name="name" placeholder="Prénom Nom" required></div>
+          <div><label for="email">E-mail</label><input id="email" name="email" type="email" placeholder="vous@exemple.com" required></div>
+          <div id="quote" style="font-weight:600"></div>
+          <button class="btn" type="submit">Procéder au paiement</button>
+          <p style="font-size:12px;color:#666">En cliquant, vous acceptez les <a href="#cgv">CGV</a>. Aucun débit si les dates sont indisponibles au moment de la validation.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3 class="section-title">Contact</h3>
+    <div class="card pad">
+      <form id="contactForm">
+        <div><label>Nom</label><input name="name" required></div>
+        <div><label>E-mail</label><input type="email" name="email" required></div>
+        <div><label>Téléphone</label><input name="phone"></div>
+        <div><label>Message</label><textarea name="message" rows="5" required placeholder="Bonjour, je souhaite des infos sur les dates…"></textarea></div>
+        <button class="btn" type="submit">Envoyer</button>
+        <p id="contactMsg" style="font-size:14px;color:#666"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div>© <span id="year"></span> Chalet l'Essina — SIRET 000 000 000 — <a href="#mentions" style="color:#a5b4fc">Mentions légales</a></div>
+  </div>
+</footer>
+
+<script type="module" src="config.js"></script>
+<script type="module" src="app.js"></script>
+
+<script>
+// Galerie avec légendes bilingues
+Promise.all([
+  fetch("photos.json").then(r=>r.json()),
+  fetch("captions.json").then(r=>r.json()).catch(()=>({}))
+]).then(([p,c])=>{
+  const photos = (p.photos||[]);
+  const caps = (c.captions||[]);
+  const grid = document.getElementById("galleryGrid");
+  grid.innerHTML = "";
+  photos.forEach((url,i)=>{
+    const fig = document.createElement("figure"); fig.className="card"; fig.style.margin=0; fig.style.overflow="hidden";
+    const img = document.createElement("img"); img.src=url; img.alt=(caps[i]?.fr)||"Photo du chalet"; img.style.display="block"; img.style.width="100%";
+    const cap = document.createElement("figcaption"); cap.style.padding="10px 12px"; cap.style.textAlign="center";
+    cap.innerHTML = `<div style="font-style:italic;color:#334">${(caps[i]?.fr)||""}</div>` + (caps[i]?.en? `<div style="font-size:13px;color:#667">${caps[i].en}</div>` : "");
+    fig.appendChild(img); fig.appendChild(cap); grid.appendChild(fig);
+  });
+}).catch(()=>{});
+
+// Formulaire contact
+const cf=document.getElementById("contactForm");
+if(cf){ cf.addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const fd=new FormData(cf); const data=Object.fromEntries(fd.entries());
+  try{
+    const res = await fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
+    const out = await res.json();
+    document.getElementById("contactMsg").textContent = out.ok? "Message envoyé. Merci !" : "Envoi impossible pour le moment.";
+  }catch{ document.getElementById("contactMsg").textContent="Envoi impossible pour le moment."; }
+});}
+</script>
+</body>
+</html>

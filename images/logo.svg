@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="48" viewBox="0 0 180 48">
+<rect rx="10" width="48" height="48" fill="#0f4c81"/>
+<path d="M8 30 L24 16 L40 30" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+<rect x="18" y="26" width="12" height="8" rx="1.5" fill="white"/>
+<text x="56" y="32" font-family="system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="20" fill="#0f4c81">Chalet l’Essina</text>
+</svg>

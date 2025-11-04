@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chalet-keryet.vercel.app/sitemap.xml
